@@ -1,0 +1,10 @@
+@TestBE_HostAddress = http://localhost:5197
+
+GET {{TestBE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{TestBE_HostAddress}}/api/product/
+Accept: application/json
+
+###
