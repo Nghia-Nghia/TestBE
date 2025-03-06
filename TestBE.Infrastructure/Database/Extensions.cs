@@ -7,9 +7,9 @@ namespace TestBE.Infrastructure.Database;
 
 public static class Extensions
 {
-    public static void RegisterDatabase(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection RegisterDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<AppDbContext>(options =>
+        return services.AddDbContext<AppDbContext>(options =>
         {
             options.UseSqlServer(configuration["DatabaseSettings:ConnectionString"],
                 builder =>
