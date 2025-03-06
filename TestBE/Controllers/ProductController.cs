@@ -11,7 +11,7 @@ namespace TestBE.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var data = service.GetAll();
+            var data = await service.GetAll();
             return Ok(data);
         }
     }
