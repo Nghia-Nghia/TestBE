@@ -22,7 +22,7 @@ public class HybridCache: ICacheService
         throw new NotImplementedException();
     }
 
-    public async Task SetAsync<T>(string key, T value, TimeSpan? expiration)
+    public async Task SetAsync<T>(string key, T value, TimeSpan? expiration = default)
     {
         var cacheOptions = new HybridCacheEntryOptions
         {

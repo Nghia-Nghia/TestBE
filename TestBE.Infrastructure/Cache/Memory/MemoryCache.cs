@@ -27,7 +27,7 @@ public class MemoryCache : ICacheService
         return Task.CompletedTask;
     }
 
-    public Task SetAsync<T>(string key, T value, TimeSpan? expiration)
+    public Task SetAsync<T>(string key, T value, TimeSpan? expiration = default)
     {
         var cacheEntryOptions = new MemoryCacheEntryOptions
         {

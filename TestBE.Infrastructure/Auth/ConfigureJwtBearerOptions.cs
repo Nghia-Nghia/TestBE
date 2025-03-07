@@ -17,7 +17,7 @@ public class ConfigureJwtBearerOptions(IOptions<TokenSetting> tokenSetting)
             return;
         }
 
-        var key = Encoding.ASCII.GetBytes(_tokenSetting.JwtSecretKey! ?? "aaa");
+        var key = Encoding.ASCII.GetBytes(_tokenSetting.JwtSecretKey!);
 
         options.RequireHttpsMetadata = false;
         options.SaveToken = true;
