@@ -8,3 +8,6 @@ GET {{TestBE_HostAddress}}/api/product/
 Accept: application/json
 
 ###
+GET {{TestBE_HostAddress}}/api/common/shop-info?domain=1
+Accept: application/json
+

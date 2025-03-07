@@ -2,12 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using TestBE.Business.ShopifyClient;
-using TestBE.Business.WebhookService;
 using TestBE.Infrastructure.Cache;
 using TestBE.Infrastructure.Database;
 using TestBE.Infrastructure.Database.Entities;
 using TestBE.Models.Dtos;
-using TestBE.Models.Models.Webhook;
 using TestBE.Shared.Configurations;
 
 namespace TestBE.Business.HomeService;
@@ -16,7 +14,6 @@ public class HomeService(
     AppDbContext dbContext,
     IShopifyClient shopifyClient,
     IOptions<LimitPurchaseConfiguration> options,
-    IRegisterWebhookService registerWebhookService,
     ICacheService cacheService) : IHomeService
 {
     public async Task<string> Auth(string domain, string code)
@@ -42,14 +39,6 @@ public class HomeService(
 
             await dbContext.Stores.AddAsync(storeFromRepo);
             await dbContext.SaveChangesAsync();
-
-            await registerWebhookService.RegisterUninstallWebhook(
-                new RegisterUninstallModel(
-                    storeFromRepo.Id,
-                    storeFromRepo.Domain,
-                    storeFromRepo.Token
-                )
-            );
         }
         else
         {

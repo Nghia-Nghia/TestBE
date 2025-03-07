@@ -6,7 +6,7 @@ namespace TestBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController(IProductService service) : ControllerBase
+    public class ProductController(IProductService service) : TestBEControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAll()
