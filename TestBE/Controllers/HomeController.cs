@@ -1,16 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using TestBE.Business.HomeService;
 
 namespace TestBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HomeController : ControllerBase
+    public class HomeController(IHomeService homeService) : ControllerBase
     {
-
-        //public async Task<IActionResult> AfterInstall(string shop, string code)
-        //{
-
-        //}
+        [HttpGet("after-install")]
+        public async Task<IActionResult> AfterInstall(string shop, string code)
+        {
+            var url = await homeService.Auth(shop, code);
+            return Redirect(url);
+        }
     }
 }
