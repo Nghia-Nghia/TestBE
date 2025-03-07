@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TestBE.Business.ProductService;
+using TestBE.Models.Request.Products;
 
 namespace TestBE.Controllers
 {
@@ -9,10 +9,10 @@ namespace TestBE.Controllers
     public class ProductController(IProductService service) : TestBEControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] OptionFilterProduct option)
         {
-            var data = await service.GetAll();
-            return Ok(data);
+            var data = await service.GetAll(option);
+            return SuccessResponse(data);
         }
     }
 }

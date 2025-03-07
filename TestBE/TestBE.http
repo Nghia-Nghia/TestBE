@@ -4,7 +4,7 @@ GET {{TestBE_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
-GET {{TestBE_HostAddress}}/api/product/
+GET {{TestBE_HostAddress}}/api/product?pagesize=10&pageindex=2
 Accept: application/json
 
 ###
