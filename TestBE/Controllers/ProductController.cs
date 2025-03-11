@@ -4,7 +4,7 @@ using TestBE.Models.Request.Products;
 
 namespace TestBE.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ProductController(IProductService service) : TestBEControllerBase
     {

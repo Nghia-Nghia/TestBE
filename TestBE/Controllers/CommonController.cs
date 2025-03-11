@@ -4,7 +4,7 @@ using TestBE.Business.CommonService;
 
 namespace TestBE.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CommonController(ICommonService commonService) : TestBEControllerBase
     {

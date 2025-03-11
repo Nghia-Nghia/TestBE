@@ -7,8 +7,13 @@ using TestBE.Shared.Configurations;
 
 namespace TestBE.Business.ShopifyClient;
 
-class ShopifyClient(IOptions<LimitPurchaseConfiguration> options) : IShopifyClient
+class ShopifyClient : IShopifyClient
 {
+    private readonly IOptions<LimitPurchaseConfiguration> options;
+    public ShopifyClient(IOptions<LimitPurchaseConfiguration> options)
+    {
+        this.options = options;
+    }
     public async Task<string> FetchShopifyAccessToken(string domain, string code)
     {
         var endpointHost = $"https://{domain}/admin/oauth/access_token";

@@ -3,12 +3,21 @@ using TestBE.Validator;
 using TestBE.Infrastructure;
 using TestBE.Shared.Configurations;
 using TestBE.Business;
+using TestBE.Business.Filters;
+using System.Text.Json.Serialization;
+using TestBE.Infrastructure.MvcExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers(options => {
+        options.Filters.Add<ModelValidationFilter>();
+        options.UseGeneralRoutePrefix("/api");
+    })
+    .AddJsonOptions(x =>
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.Configure<LimitPurchaseConfiguration>(c =>
     builder.Configuration.GetSection(nameof(LimitPurchaseConfiguration)).Bind(c)
 );

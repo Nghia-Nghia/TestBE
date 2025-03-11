@@ -3,7 +3,7 @@ using TestBE.Business.HomeService;
 
 namespace TestBE.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class HomeController(IHomeService homeService) : ControllerBase
     {
