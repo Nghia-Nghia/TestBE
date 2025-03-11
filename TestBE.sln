@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBE", "TestBE\TestBE.csproj", "{4938EB03-6B1B-41DB-BE7B-75E51F7202F1}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBE.Shared", "TestBE.Shared\TestBE.Shared.csproj", "{4D28D3F3-340D-45AE-BC8C-B1ED4CC27FF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBE.Models", "TestBE.Models\TestBE.Models.csproj", "{E534A59B-30AA-4B32-9AC7-901A65EBBADE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBE.Extension", "TestBE.Extension\TestBE.Extension.csproj", "{C83CFC5F-B087-451D-B045-3B64339EA924}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBE.Validator", "TestBE.Validator\TestBE.Validator.csproj", "{CBF3D8DA-474E-48DF-A98F-856E7036120C}"
 EndProject
@@ -43,10 +41,6 @@ Global
 		{E534A59B-30AA-4B32-9AC7-901A65EBBADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E534A59B-30AA-4B32-9AC7-901A65EBBADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E534A59B-30AA-4B32-9AC7-901A65EBBADE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C83CFC5F-B087-451D-B045-3B64339EA924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C83CFC5F-B087-451D-B045-3B64339EA924}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C83CFC5F-B087-451D-B045-3B64339EA924}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C83CFC5F-B087-451D-B045-3B64339EA924}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBF3D8DA-474E-48DF-A98F-856E7036120C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBF3D8DA-474E-48DF-A98F-856E7036120C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF3D8DA-474E-48DF-A98F-856E7036120C}.Release|Any CPU.ActiveCfg = Release|Any CPU

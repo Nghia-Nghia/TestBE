@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TestBE.Business\TestBE.Business.csproj" />
     <ProjectReference Include="..\TestBE.Infrastructure\TestBE.Infrastructure.csproj" />
+    <ProjectReference Include="..\TestBE.Validator\TestBE.Validator.csproj" />
   </ItemGroup>
 
 </Project>
