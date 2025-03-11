@@ -2,6 +2,7 @@ using TestBE.Business.ProductService;
 using TestBE.Validator;
 using TestBE.Infrastructure;
 using TestBE.Shared.Configurations;
+using TestBE.Business;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.Configure<LimitPurchaseConfiguration>(c =>
 );
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddBusiness();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddValidatorModel();
 builder.Services.AddScoped<IProductService, ProductService>();

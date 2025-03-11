@@ -14,5 +14,11 @@ namespace TestBE.Controllers
             var data = await service.GetAll(option);
             return SuccessResponse(data);
         }
+        [HttpGet("get-from-shopify")]
+        public async Task<IActionResult> GetAllFromShopify([FromQuery] string domain, string? cursor, int pageSize)
+        {
+            var data = await service.GetProductsAsync(domain,cursor,pageSize);
+            return SuccessResponse(data);
+        }
     }
 }
